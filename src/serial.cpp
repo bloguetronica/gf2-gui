@@ -1,4 +1,4 @@
-/* GF2 GUI - Version 1.0 for Debian Linux
+/* GF2 GUI - Version 2.0 for Debian Linux
    Copyright (c) 2018 Samuel Lourenço
 
    This program is free software: you can redistribute it and/or modify it
@@ -27,13 +27,9 @@ Serial::Serial(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Serial)
 {
-    QProcess sh;
     ui->setupUi(this);
-    sh.setProcessChannelMode(QProcess::MergedChannels);
-    sh.start("sh", QStringList() << "-c" << "gf2-list");
-    sh.waitForFinished();
-    ui->textBrowserList->append(sh.readAll());
-    sh.close();
+    list();
+    ui->lineEditSerial->setValidator(new QRegExpValidator(QRegExp("[A-Za-z\\d-]{1,12}"), this));
 }
 
 Serial::~Serial()
@@ -41,24 +37,30 @@ Serial::~Serial()
     delete ui;
 }
 
-QString Serial::getSerial()
+QString Serial::serialLineEditText() const
 {
-    QString serialstr = ui->lineEditSerial->text().simplified();
-    serialstr.remove(" ");
-    serialstr.remove("&");
-    serialstr.remove("|");
-    serialstr.remove("(");
-    serialstr.remove(")");
-    return serialstr;
+    return ui->lineEditSerial->text();
+}
+
+void Serial::setSerialLineEditText(const QString &serialstr)
+{
+    ui->lineEditSerial->setText(serialstr);
 }
 
 void Serial::on_pushButtonRefresh_clicked()
 {
-    QProcess sh;
     ui->textBrowserList->clear();
+    list();
+}
+
+void Serial::list()
+{
+    QProcess sh;
     sh.setProcessChannelMode(QProcess::MergedChannels);
     sh.start("sh", QStringList() << "-c" << "gf2-list");
     sh.waitForFinished();
-    ui->textBrowserList->append(sh.readAll());
+    QString result = sh.readAll();
+    result.chop(1);
+    ui->textBrowserList->append(result);
     sh.close();
 }
