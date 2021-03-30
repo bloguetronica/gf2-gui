@@ -142,19 +142,16 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>309</y>
+       <y>315</y>
        <width>115</width>
-       <height>33</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>Amplitude (Vpp):</string>
+      <string>Amplitude (V&lt;sub&gt;pp&lt;/sub&gt;):</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
      </property>
     </widget>
     <widget class="QComboBox" name="comboBoxWave">
@@ -374,7 +371,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Clear Settings</string>
+      <string>Clear</string>
      </property>
     </widget>
    </widget>
@@ -420,7 +417,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>130</y>
+       <y>350</y>
        <width>81</width>
        <height>31</height>
       </rect>
@@ -433,7 +430,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>170</y>
+       <y>130</y>
        <width>81</width>
        <height>101</height>
       </rect>
@@ -475,7 +472,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>280</y>
+       <y>240</y>
        <width>81</width>
        <height>101</height>
       </rect>
@@ -523,6 +520,12 @@
       <height>161</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Monospace</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -538,11 +541,14 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <addaction name="actionLoad"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
-   <widget class="QMenu" name="menuSettings">
+   <widget class="QMenu" name="menuOptions">
     <property name="title">
-     <string>&amp;Settings</string>
+     <string>&amp;Options</string>
     </property>
     <addaction name="actionAutoApply"/>
     <addaction name="actionResetClear"/>
@@ -556,7 +562,7 @@
     <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuSettings"/>
+   <addaction name="menuOptions"/>
    <addaction name="menuHelp"/>
   </widget>
   <action name="actionQuit">
@@ -583,7 +589,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>&amp;Clear Settings after Reset</string>
+    <string>&amp;Clear after Reset</string>
    </property>
   </action>
   <action name="actionSerial">
@@ -594,6 +600,22 @@
   <action name="actionAbout">
    <property name="text">
     <string>&amp;About GF2 GUI</string>
+   </property>
+  </action>
+  <action name="actionLoad">
+   <property name="text">
+    <string>&amp;Load Settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>&amp;Save Settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
   </action>
  </widget>

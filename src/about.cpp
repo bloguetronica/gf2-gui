@@ -1,5 +1,5 @@
-/* GF2 GUI - Version 1.0 for Debian Linux
-   Copyright (c) 2018 Samuel Lourenço
+/* GF2 GUI - Version 2.0 for Debian Linux
+   Copyright (c) 2018-2019 Samuel Lourenço
 
    This program is free software: you can redistribute it and/or modify it
    under the terms of the GNU General Public License as published by the Free
