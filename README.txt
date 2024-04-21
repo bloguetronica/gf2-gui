@@ -6,7 +6,7 @@ installation, you must certify that your system is Debian based (or at least
 uses apt-get) and that you have an active Internet connection. It is important
 to note that you should also have the control commands for the function
 generator already installed, but you can always install them later (please
-refer to the packages "gf2-1.1.tar.gz" or "gf2-1.0.tar.gz" to do so).
+refer to the package "gf2-2.0.tar.gz" to do so).
 
 A list of the included scripts follows:
 – install.sh;
@@ -15,16 +15,15 @@ A list of the included scripts follows:
 In order to compile and install GF2 GUI for the first time, all you have to do
 is to run "install.sh" by invoking "sudo ./install.sh" on a terminal window,
 after changing your working directory to the current one. This script will
-first obtain and install the required "build-essential" and "qt5-default"
-packages (if they are not installed yet). Then it will compile the application
-and move it to "/usr/local/bin/".
+first obtain and install the required "build-essential" and
+"qt5-default"/"qtbase5-dev" packages (if they are not installed yet). Then it
+will compile the application and move it to "/usr/local/bin/".
 
 Conversely, to uninstall, you should run "uninstall.sh" by invoking "sudo
 ./uninstall.sh", again on a terminal window after making sure that your
 working directory is this one. This will delete the previously installed
-application and source code. However it won't remove the "build-essential" and
-"qt5-default" packages, since they could be already installed prior to the
-first installation.
+application and source code. However it won't remove the packages mentioned
+above, since they could be already installed before the first installation.
 
 P.S.:
 Since the GUI was designed having KDE in mind, you should get the best
