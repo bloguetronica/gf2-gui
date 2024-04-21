@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=GF2 GUI
+Icon=gf2-gui
+Exec=gf2-gui
+Terminal=false
+Categories=Development;Electronics;
