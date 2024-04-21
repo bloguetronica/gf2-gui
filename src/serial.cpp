@@ -20,6 +20,8 @@
 
 // Includes
 #include <QProcess>
+#include <QRegExp>
+#include <QRegExpValidator>
 #include "serial.h"
 #include "ui_serial.h"
 
